@@ -1,0 +1,19 @@
+meta {
+  name: Unbook Room
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:8080/bookings/3
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "roomId": 1,
+    "startTime": "2025-05-20T15:00:00",
+    "endTime": "2025-05-20T16:00:00"
+  }
+}

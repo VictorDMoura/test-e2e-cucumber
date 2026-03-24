@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "RummyMs",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

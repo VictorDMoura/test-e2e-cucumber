@@ -1,0 +1,19 @@
+meta {
+  name: Book Room
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/bookings
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "roomId": 1,
+    "startTime": "2025-04-21T17:03:20",
+    "endTime": "2025-04-21T18:30:00"
+  }
+}
