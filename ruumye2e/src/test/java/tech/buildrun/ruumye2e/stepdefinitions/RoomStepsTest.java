@@ -1,5 +1,6 @@
 package tech.buildrun.ruumye2e.stepdefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.common.mapper.TypeRef;
@@ -47,6 +48,27 @@ public class RoomStepsTest {
 
         assertTrue(rooms.stream()
                 .anyMatch(room -> room.name().equals(name)));
+
+    }
+
+    @Given("the room {string} exists")
+    public void theRoomExists(String roomName) {
+        var rooms = restConfig.givenBackend()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .get("/rooms")
+                .then()
+                .statusCode(200)
+                .extract()
+                .as(new TypeRef<List<RoomDto>>() {
+                });
+
+        var room = rooms.stream()
+                .filter(r -> r.name().equalsIgnoreCase(roomName))
+                .findFirst();
+
+        assertTrue(room.isPresent());
+        scenarioContext.put("roomId", room.get().id());
+
 
     }
 }
