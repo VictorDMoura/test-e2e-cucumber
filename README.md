@@ -38,7 +38,7 @@ Destaques Técnicos:
 
 🚀 Como executar o projeto
   1. Clonar o repositório
-  2. ubir a API:
+  2. Subir a API:
   3. Navegue até a pasta meeting-room-booking.
   4. Execute ./mvnw spring-boot:run.
   5.Executar os testes E2E:
