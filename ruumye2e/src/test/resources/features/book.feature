@@ -16,3 +16,4 @@ Feature: Book a room
     And one user book the room for one hour from now
     When I book the room for one hour from now
     Then the booking should conflict
+
